@@ -13,10 +13,13 @@ import math
 
 opt = docopt(__doc__)
 
+
 def main(number):
-  number = int(number)
-  print(math.sqrt(number))
-    
+    if number < 0:
+        raise Exception("n should be a positive number")
+        number = int(number)
+        print(math.sqrt(number))
+
 
 if __name__ == "__main__":
-  main(opt["--n"])
+    main(opt["--n"])
